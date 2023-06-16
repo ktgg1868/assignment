@@ -87,8 +87,6 @@ for video_url in video_links[:num_videos]:
         
         num += 1
 
-# WebDriver를 종료합니다.
-driver.quit()
 
 # 데이터를 데이터프레임으로 변환합니다.
 df = pd.DataFrame(data, columns=['','영상 URL', '영상 제목', '댓글 작성자명', '댓글 작성시간', '댓글 내용'])
@@ -96,4 +94,6 @@ df = pd.DataFrame(data, columns=['','영상 URL', '영상 제목', '댓글 작�
 # xlsx 파일로 저장합니다.
 df.to_excel(save_xlsx, index=False, header=True)
 
+# WebDriver를 종료합니다.
 print("데이터 저장이 완료되었습니다.")
+driver.quit()
